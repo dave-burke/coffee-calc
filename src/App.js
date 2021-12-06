@@ -2,33 +2,19 @@ import { useState } from 'react';
 import styled from 'styled-components'
 
 const StyledApp = styled.div`
-  text-align: center;
   height: 100vh;
 `
 
 const Header = styled.header`
   background-color: #2C4C66;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 `
 
 const Fieldset = styled.fieldset`
   border-style: none;
-  display: flex;
-`
-
-const FieldsetInput = styled.input`
-  flex: 1 0 auto;
 `
 
 const Result = styled.span`
   color: #66462C;
-  font-weight: bolder;
-  font-size: xx-large;
 `
 
 function App() {
@@ -40,28 +26,30 @@ function App() {
     return Math.round(gramsWater / ratio)
   }
   return (
-    <StyledApp>
+    <StyledApp className="has-text-centered">
       <Header>
-        <h1>Coffee Calc</h1>
+        <h1 class="title is-1 has-text-white">Coffee Calc</h1>
       </Header>
       <main>
-        <Fieldset>
+        <Fieldset className="is-flex">
           <label htmlFor="cups">cups</label>
-          <FieldsetInput
+          <input
             id="cups" type='range'
+            className='is-flex-grow-1'
             min='1' max='12'
             value={cups} onChange={e => setCups(e.target.value)}/>
             {cups}
         </Fieldset>
-        <Fieldset>
+        <Fieldset className="is-flex">
           <label htmlFor="ratio">ratio</label>
-          <FieldsetInput
+          <input
             id="ratio" type='range'
+            className='is-flex-grow-1'
             min='10' max='18'
             value={ratio} onChange={e => setRatio(e.target.value)}/>
             1/{ratio}
         </Fieldset>
-        <h2>Use <Result>{calcCoffeeGrams()}</Result> grams of coffee</h2>
+        <h2>Use <Result className="is-size-2 has-text-weight-bold">{calcCoffeeGrams()}</Result> grams of coffee</h2>
       </main>
     </StyledApp>
   );
