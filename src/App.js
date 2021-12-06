@@ -5,8 +5,10 @@ function App() {
   const [cups, setCups] = useState(10)
   const [ratio, setRatio] = useState(17)
 
-  const calcWaterGrams = () => cups * 5 /* oz per cup */ * 30 /* grams per ounce */
-  const calcCoffeeGrams = () => Math.round(calcWaterGrams() / ratio, 4)
+  const calcCoffeeGrams = () => {
+    const gramsWater = cups * 5 /* oz per cup */ * 30 /* grams per ounce */
+    return Math.round(gramsWater / ratio)
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -29,10 +31,7 @@ function App() {
             value={ratio} onChange={e => setRatio(e.target.value)}/>
             1/{ratio}
         </fieldset>
-        <ul>
-          <li>{calcWaterGrams()} grams of water</li>
-          <li>{calcCoffeeGrams()} grams of coffee</li>
-        </ul>
+        <h2>Use <span class="App-result">{calcCoffeeGrams()}</span> grams of coffee</h2>
       </main>
     </div>
   );

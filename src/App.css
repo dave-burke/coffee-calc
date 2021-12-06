@@ -15,4 +15,15 @@
 
 .App-main fieldset {
   border-style: none;
+  display: flex;
+}
+
+.App-main fieldset input {
+  flex: 1 0 auto;
+}
+
+.App-result {
+  color: saddlebrown;
+  font-weight: bolder;
+  font-size: xx-large;
 }
