@@ -19,7 +19,7 @@ function App() {
           <label htmlFor="cups">cups</label>
           <input
             id="cups" type='range'
-            min='0' max='12'
+            min='1' max='12'
             value={cups} onChange={e => setCups(e.target.value)}/>
             {cups}
         </fieldset>
