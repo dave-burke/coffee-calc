@@ -1,6 +1,6 @@
 function Slider(props) {
     return (
-        <fieldset className="is-flex is-borderless">
+        <fieldset className="is-flex">
           <label htmlFor={props.id} className="m-2">{props.label}</label>
           <input
             id={props.id} type="range"
