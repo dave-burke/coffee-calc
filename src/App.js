@@ -9,6 +9,8 @@ const StyledApp = styled.div`
 
 const Result = styled.span`
   color: #66462C;
+  font-size: 3rem;
+  font-weight: bold;
 `
 
 function App() {
@@ -25,7 +27,7 @@ function App() {
       <main>
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
         <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
-        <p>Use <Result className="is-size-2 has-text-weight-bold ml-1 mr-1">{calcCoffeeGrams()}</Result> grams of coffee</p>
+        <p>Use <Result className="ml-1 mr-1">{calcCoffeeGrams()}</Result> grams of coffee</p>
       </main>
     </StyledApp>
   );
