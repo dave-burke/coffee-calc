@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import styled from 'styled-components'
+import Slider from './Slider'
 
 const StyledApp = styled.div`
   height: 100vh;
@@ -7,10 +8,6 @@ const StyledApp = styled.div`
 
 const Header = styled.header`
   background-color: #2C4C66;
-`
-
-const Fieldset = styled.fieldset`
-  border-style: none;
 `
 
 const Result = styled.span`
@@ -31,25 +28,9 @@ function App() {
         <h1 class="title is-1 has-text-white">Coffee Calc</h1>
       </Header>
       <main>
-        <Fieldset className="is-flex">
-          <label htmlFor="cups">cups</label>
-          <input
-            id="cups" type='range'
-            className='is-flex-grow-1'
-            min='1' max='12'
-            value={cups} onChange={e => setCups(e.target.value)}/>
-            {cups}
-        </Fieldset>
-        <Fieldset className="is-flex">
-          <label htmlFor="ratio">ratio</label>
-          <input
-            id="ratio" type='range'
-            className='is-flex-grow-1'
-            min='10' max='18'
-            value={ratio} onChange={e => setRatio(e.target.value)}/>
-            1/{ratio}
-        </Fieldset>
-        <h2>Use <Result className="is-size-2 has-text-weight-bold">{calcCoffeeGrams()}</Result> grams of coffee</h2>
+        <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
+        <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
+        <p>Use <Result className="is-size-2 has-text-weight-bold">{calcCoffeeGrams()}</Result> grams of coffee</p>
       </main>
     </StyledApp>
   );
