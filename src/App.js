@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Slider from './Slider'
+import Header from './Header'
 
 const StyledApp = styled.div`
   height: 100vh;
-`
-
-const Header = styled.header`
-  background-color: #2C4C66;
 `
 
 const Result = styled.span`
@@ -24,9 +21,7 @@ function App() {
   }
   return (
     <StyledApp className="has-text-centered">
-      <Header>
-        <h1 class="title is-1 has-text-white">Coffee Calc</h1>
-      </Header>
+      <Header></Header>
       <main>
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
         <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
