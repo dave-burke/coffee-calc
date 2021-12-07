@@ -1,5 +1,17 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from 'react'
+import styled from 'styled-components'
+import Slider from './Slider'
+import Header from './Header'
+
+const StyledApp = styled.div`
+  height: 100vh;
+`
+
+const Result = styled.span`
+  color: #66462C;
+  font-size: 3rem;
+  font-weight: bold;
+`
 
 function App() {
   const [cups, setCups] = useState(10)
@@ -10,30 +22,14 @@ function App() {
     return Math.round(gramsWater / ratio)
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Coffee Calc</h1>
-      </header>
-      <main className="App-main">
-        <fieldset>
-          <label htmlFor="cups">cups</label>
-          <input
-            id="cups" type='range'
-            min='1' max='12'
-            value={cups} onChange={e => setCups(e.target.value)}/>
-            {cups}
-        </fieldset>
-        <fieldset>
-          <label htmlFor="ratio">ratio</label>
-          <input
-            id="ratio" type='range'
-            min='10' max='18'
-            value={ratio} onChange={e => setRatio(e.target.value)}/>
-            1/{ratio}
-        </fieldset>
-        <h2>Use <span class="App-result">{calcCoffeeGrams()}</span> grams of coffee</h2>
+    <StyledApp className="has-text-centered">
+      <Header></Header>
+      <main>
+        <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
+        <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
+        <p>Use <Result className="ml-1 mr-1">{calcCoffeeGrams()}</Result> grams of coffee</p>
       </main>
-    </div>
+    </StyledApp>
   );
 }
 
