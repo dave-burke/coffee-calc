@@ -7,6 +7,10 @@ const StyledApp = styled.div`
   height: 100vh;
 `
 
+const Main = styled.main`
+  max-width: 50rem;
+`
+
 const Result = styled.span`
   color: #66462C;
   font-size: 3rem;
@@ -24,11 +28,11 @@ function App() {
   return (
     <StyledApp className="has-text-centered">
       <Header></Header>
-      <main>
+      <Main className="ml-auto mr-auto">
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
         <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
         <p>Use <Result className="ml-1 mr-1">{calcCoffeeGrams()}</Result> grams of coffee</p>
-      </main>
+      </Main>
     </StyledApp>
   );
 }
