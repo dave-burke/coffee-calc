@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+$coffee-brown: #66462C;
+$secondary: #2c4c66;
+
+$primary: $coffee-brown;
+
+.has-background-secondary {
+  background-color: $secondary;
+}
+
+.has-full-height {
+  height: 100vh;
+}
+
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/utilities/_all.sass";
