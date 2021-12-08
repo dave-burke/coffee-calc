@@ -12,7 +12,7 @@ function App() {
   }, [cups, ratio]);
 
   return (
-    <div>
+    <div class="has-full-height has-background-light">
       <Header></Header>
       <main className="container">
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
