@@ -9,7 +9,11 @@ $primary: $coffee-brown;
   background-color: $secondary;
 }
 
-@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/utilities/_all.sass";
 
 body {
   margin: 0;
