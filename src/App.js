@@ -12,12 +12,12 @@ function App() {
   }, [cups, ratio]);
 
   return (
-    <div className="has-text-centered">
+    <div>
       <Header></Header>
       <main className="container">
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
         <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
-        <p>Use <span className="ml-1 mr-1 is-size-1 has-text-primary has-text-weight-bold">{coffeeGrams}</span> grams of coffee</p>
+        <p class="has-text-centered">Use <span className="ml-1 mr-1 is-size-1 has-text-primary has-text-weight-bold">{coffeeGrams}</span> grams of coffee</p>
       </main>
     </div>
   );
