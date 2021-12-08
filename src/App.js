@@ -1,21 +1,6 @@
 import { useState, useMemo } from 'react'
-import styled from 'styled-components'
 import Slider from './Slider'
 import Header from './Header'
-
-const StyledApp = styled.div`
-  height: 100vh;
-`
-
-const Main = styled.main`
-  max-width: 50rem;
-`
-
-const Result = styled.span`
-  color: #66462C;
-  font-size: 3rem;
-  font-weight: bold;
-`
 
 function App() {
   const [cups, setCups] = useState(10)
@@ -27,14 +12,14 @@ function App() {
   }, [cups, ratio]);
 
   return (
-    <StyledApp className="has-text-centered">
+    <div className="has-text-centered">
       <Header></Header>
-      <Main className="ml-auto mr-auto">
+      <main className="container">
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
         <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
-        <p>Use <Result className="ml-1 mr-1">{coffeeGrams}</Result> grams of coffee</p>
-      </Main>
-    </StyledApp>
+        <p>Use <span className="ml-1 mr-1 is-size-1 has-text-primary has-text-weight-bold">{coffeeGrams}</span> grams of coffee</p>
+      </main>
+    </div>
   );
 }
 
