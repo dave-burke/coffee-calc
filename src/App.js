@@ -16,7 +16,14 @@ function App() {
       <Header></Header>
       <main className="container">
         <Slider id="cups" label="Cups" min="1" max="12" value={cups} onChange={setCups}></Slider>
-        <Slider id="ratio" label="Ratio" min="10" max="18" value={ratio} onChange={setRatio}></Slider>
+        <Slider id="ratio" label="Ratio" min="8" max="18" value={ratio} onChange={setRatio}></Slider>
+        <div className="buttons is-centered are-large">
+          <button className="button" onClick={() => setRatio(8)}>Cold Brew</button>
+          <button className="button" onClick={() => setRatio(12)}>French Press</button>
+          <button className="button" onClick={() => setRatio(15)}>Strong Drip</button>
+          <button className="button" onClick={() => setRatio(17)}>"Golden" Ratio</button>
+          <button className="button" onClick={() => setRatio(18)}>Light Drip</button>
+        </div>
         <p className="has-text-centered">Use <span className="ml-1 mr-1 is-size-1 has-text-primary has-text-weight-bold">{coffeeGrams}</span> grams of coffee</p>
       </main>
     </div>
