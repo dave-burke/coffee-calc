@@ -1,12 +1,28 @@
 @charset "utf-8";
 
-$coffee-brown: #66462C;
-$secondary: #2c4c66;
+// https://colorschemedesigner.com/csd-3.5/#0t31TiccOw0w0
+$brown-darker: #42250E;
+$brown-dark: #4D3A2C;
+$brown: #66462C;
+$brown-light: #B38866;
+$brown-lighter: #B3937B;
 
-$primary: $coffee-brown;
+$blue-darker: #0B162C;
+$blue-dark: #202633;
+$blue: #212C44;
+$blue-light: #6477A2;
+$blue-lighter: #7483A2;
 
-.has-background-secondary {
-  background-color: $secondary;
+$green-darker: #0E360C;
+$green-dark: #253E24;
+$green: #265324;
+$green-light: #64A961;
+$green-lighter: #77A974;
+
+$primary: $brown;
+
+.has-background-brown.dark {
+  background-color: $brown-dark;
 }
 
 .has-full-height {
